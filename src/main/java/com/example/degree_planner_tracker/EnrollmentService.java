@@ -37,13 +37,22 @@ class EnrollmentService {
     @Transactional
     public Enrollment getEnrollmentById(Integer studentNo, Integer courseNo, String semester, Integer year) {
         EnrollmentId enrollmentId = new EnrollmentId(studentNo, courseNo, semester, year);
+        if (!enrollmentRepository.existsById(enrollmentId)) {
+            System.out.println("Warning: Could not find enrollment with id " + enrollmentId);
+            return null;
+        }
         return enrollmentRepository.findById(enrollmentId).orElse(null);
     }
 
     @Transactional
     public void deleteEnrollmentById(Integer studentNo, Integer courseNo, String semester, Integer year) {
         EnrollmentId id = new EnrollmentId(studentNo, courseNo, semester, year);
-        enrollmentRepository.deleteById(id);
+        if (!enrollmentRepository.existsById(id)) {
+            enrollmentRepository.deleteById(id);
+        }
+        else {
+            System.out.println("Warning: Could not find enrollment with id " + id);
+        }
     }
 
     @Transactional

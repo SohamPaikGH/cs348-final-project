@@ -1,6 +1,10 @@
 package com.example.degree_planner_tracker;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+
 @Entity
 @Table(name = "Student")
 public class Student {
@@ -10,15 +14,21 @@ public class Student {
     private Integer studentNo;
 
     @Column(name = "first_name", nullable = false, length = 50)
+    @NotBlank(message = "Student must have a first name")
     private String firstName;
 
     @Column(name = "last_name", nullable = false, length = 50)
+    @NotBlank(message = "Student must have a last name")
     private String lastName;
 
     @Column(name = "total_gpa", nullable = false)
+    @NotNull(message = "Student must have a GPA")
+    @Positive
     private Double totalGpa;
 
     @Column(name = "credits_taken", nullable = false)
+    @NotNull(message = "Student must have taken at least 0 credits")
+    @Positive
     private Integer creditsTaken;
 
     public Student() {}
