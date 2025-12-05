@@ -1,6 +1,10 @@
-# CS 34800 Fall 2025 Final Project Submission
+# CS 34800 Fall 2025 Final Project Part 3 Submission
 
-# Degree Planner & Tracker
+## Author
+
+- Soham Paik
+
+## Degree Planner & Tracker
 
 A web application for managing student enrollments, courses, and degree program requirements.
 
@@ -163,20 +167,8 @@ degree_planner_tracker/
 └── pom.xml                           # Maven configuration
 ```
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## Authors
-
-- Soham Paik - Part 3 Submission
-
 ## Acknowledgments
 
 - Spring Boot documentation
 - Angular documentation
-- Purdue University (if this is for a class project)
+- Purdue University
